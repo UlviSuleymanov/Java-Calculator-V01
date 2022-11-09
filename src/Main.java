@@ -1,6 +1,7 @@
+import java.io.IOException;
+
 public class Main {
-    public static void main(String[] args) {
-      double result = Calculator.Calculate();
-        System.out.println("Your result : " + result);
+    public static void main(String[] args) throws IOException {
+        new Calculator().Calculate();
     }
 }

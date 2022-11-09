@@ -1,33 +1,25 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Calculator {
-    public static double Calculate() {
-        Scanner sc = new Scanner(System.in);
+    public void Calculate() throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Please select value of A");
-        double a = sc.nextDouble();
+        double a = Double.parseDouble(reader.readLine());
         System.out.println("Please select value of B");
-        double b = sc.nextDouble();
-        System.out.println("Please select operation. 1-4 respectfully follows(+-*/)");
-        int operation = sc.nextInt();
+        double b = Double.parseDouble(reader.readLine());
+        System.out.println("select one of the operators + / * - %");
+        String operation = reader.readLine();
 
-        double netice = 0;
         switch (operation) {
-            case 1:
-                netice = math_utils.topla(a, b);
-                return netice;
-            case 2:
-                netice = math_utils.cix(a, b);
-                return netice;
-            case 3:
-                netice = math_utils.vur(a, b);
-                return netice;
-            case 4:
-                netice = math_utils.bol(a, b);
-                return netice;
-            default:
-                netice = 0;
+            case "+" -> System.out.println(a + b);
+            case "-" -> System.out.println(a - b);
+            case "*" -> System.out.println(a * b);
+            case "/" -> System.out.println(a / b);
+            case "%" -> System.out.println(a % b);
+            default -> System.out.println("error");
         }
-        return netice;
     }
 }
 
