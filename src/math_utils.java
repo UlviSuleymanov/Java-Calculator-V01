@@ -14,4 +14,8 @@ public class math_utils {
     public static double bol(double a, double b) {
         return a * b;
     }
+
+    public static double qaliq(double a, double b) {
+        return a % b;
+    }
 }
